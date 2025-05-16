@@ -1,6 +1,7 @@
 # ☕ Coffee Cart Test Automation
 
-This project provides automated UI testing for the [Coffee Cart](https://coffee-cart.app/) website using **Robot Framework** and **Selenium**. It is designed to help testers validate key e-commerce flows such as adding items to a cart, verifying form validation, and simulating user behavior.
+This project provides automated UI testing for the [Coffee Cart](https://coffee-cart.app/) website using [**Robot Framework**](https://robotframework.org/) and [**Selenium**](https://www.selenium.dev/).
+It is designed to help testers validate key e-commerce flows such as adding items to a cart, verifying form validation, and simulating user behavior.
 
 ---
 
