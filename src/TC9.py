@@ -18,7 +18,6 @@ def go_to_menu_page():
     sel.click_element("//a[@href=\"/\"]")
 
 def click_drink(drink_name):
-    # drink_name = str(drink_name)
     drink = {"Espresso":1,"Espresso Macchiato":2,"Cappuccino":3,"Mocha":4,"Flat White":5,"Americano":6,"Cafe Latte":7,"Espresso Con Panna":8,"Cafe Breve":9}
     sel = BuiltIn().get_library_instance('SeleniumLibrary')
     sel.click_element("//*[@id=\"app\"]/div[2]/ul/li[" + str(drink[drink_name]) + "]")

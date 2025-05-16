@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     Verify the correctness of decreasing the number of items on the "Cart" page
 Library           SeleniumLibrary
-Library            ../src/CartPage.py
+Library            ../src/TC9.py
 
 *** Variables ***
 ${BROWSER}          Chrome
