@@ -12,7 +12,6 @@ It is designed to help testers validate key e-commerce flows such as adding item
 - ✅ Product catalog view
 - 🛒 Cart functionality
 - 💳 Checkout with form validation
-- 💾 State persistence (LocalStorage)
 
 Perfect for testing user interaction and front-end logic.
 
