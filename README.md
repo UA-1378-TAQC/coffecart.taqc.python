@@ -44,7 +44,7 @@ Follow these steps to get the project running locally.
 ### 🪟 On Windows:
 ```bash
 python -m venv venv
-venv\Scripts\activate
+.\venv\Scripts\activate
 ```
 
 ### 💻 On macOS/Linux:
