@@ -1,42 +1,63 @@
 # ☕ Coffee Cart Test Automation
 
-This project is built for automated testing of the [Coffee Cart](https://coffee-cart.app/) website using **Robot Framework** — a powerful and readable testing framework ideal for both manual testers and automation engineers.
+This project provides automated UI testing for the [Coffee Cart](https://coffee-cart.app/) website using **Robot Framework** and **Selenium**. It is designed to help testers validate key e-commerce flows such as adding items to a cart, verifying form validation, and simulating user behavior.
 
-## 🔍 About Coffee Cart
+---
 
-Coffee Cart is a demo e-commerce web application that simulates an online coffee store. It includes the following features:  
-- Viewing a list of coffee products  
-- Adding items to the cart  
-- Checkout functionality  
-- Form handling and validation  
-- Local storage (cart state is preserved)
+## 🔍 About the Coffee Cart App
 
-It is a perfect training ground for UI test automation and validation of e-commerce workflows.
+**Coffee Cart** is a demo online store for learning and practicing test automation. It includes:
+
+- ✅ Product catalog view
+- 🛒 Cart functionality
+- 💳 Checkout with form validation
+- 💾 State persistence (LocalStorage)
+
+Perfect for testing user interaction and front-end logic.
+
+---
 
 ## 🎯 Project Goal
 
-The objective is to implement a maintainable and readable test suite that ensures:
-- Correct handling of cart and checkout flows
-- Proper form validation
-- Accurate user interface behavior
+- Validate shopping cart logic
+- Test checkout and input validation
+- Practice automation with Robot Framework + Python custom keywords
 
-## 🧰 Technologies and Tools
+---
 
-- 🤖 **Robot Framework** — readable test automation framework
-- 🐍 **Python 3.11+**
-- 🧪 **SeleniumLibrary** — for browser automation
-- 📄 **Custom Python Keywords** — for reusable actions (e.g., `CartPage.py`)
-- 🗺️ **Page Object Model (POM)** — used in Python modules for clarity and reuse
-- 📦 **requirements.txt** — for dependencies
+## 🧰 Technologies Used
 
-## 📦 Installation
-Set up a virtual environment and activate it:
+- 🤖 [Robot Framework](https://robotframework.org/) — keyword-driven test automation
+- 🐍 Python 3.11+
+- 🧪 [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/) — for browser automation
+- 📄 Custom Python keywords (e.g. `CartPage.py`)
+- 🗂 Page Object Model (POM)
+- 📦 `requirements.txt` for Python dependencies
+
+---
+
+## 🚀 Quick Setup Guide
+
+Follow these steps to get the project running locally.
+1. Create & Activate Virtual Environment
+### 🪟 On Windows:
+```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+venv\Scripts\activate
+```
 
-Install dependencies:
+### 💻 On macOS/Linux:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+2. Install All Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-Install Robot Framework and SeleniumLibrary:
-pip install robotframework seleniumlibrary
+## 🤝 Contribution
 
+Feel free to fork the repo and submit pull requests!
+This is an open educational project built for learning and sharing.
