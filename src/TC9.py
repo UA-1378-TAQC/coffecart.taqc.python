@@ -31,11 +31,7 @@ def equal_value_of_the_item(expected_data):
     sel_lib = BuiltIn().get_library_instance('SeleniumLibrary')
     actual_data = sel_lib.get_text("//*[@id=\"app\"]/div[2]/div/ul/li[2]/div[2]/span").strip()
 
-    if actual_data != expected_data:
-        raise AssertionError(
-            f"Expected '{expected_data}', but got '{actual_data}'"
-        )
-    else: return True
+    BuiltIn().should_be_equal(actual_data,expected_data,f"Expected '{expected_data}', but got '{actual_data}'")
 
 def equal_total_price(expected_price):
     sel_lib = BuiltIn().get_library_instance('SeleniumLibrary')
@@ -51,18 +47,10 @@ def equal_total(expected_data):
     sel_lib = BuiltIn().get_library_instance('SeleniumLibrary')
     actual_data = sel_lib.get_text("//*[@id=\"app\"]/div[2]/div/div[1]/button").strip()
 
-    if actual_data != expected_data:
-        raise AssertionError(
-            f"Expected '{expected_data}', but got '{actual_data}'"
-        )
-    else: return True
+    BuiltIn().should_be_equal(actual_data,expected_data,f"Expected '{expected_data}', but got '{actual_data}'")
 
 def equal_cart(expected_data):
     sel_lib = BuiltIn().get_library_instance('SeleniumLibrary')
     actual_data = sel_lib.get_text("//*[@id=\"app\"]/ul/li[2]/a").strip()
 
-    if actual_data != expected_data:
-        raise AssertionError(
-            f"Expected '{expected_data}', but got '{actual_data}'"
-        )
-    else: return True
+    BuiltIn().should_be_equal(actual_data,expected_data,f"Expected '{expected_data}', but got '{actual_data}'")
