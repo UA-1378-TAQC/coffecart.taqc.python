@@ -7,7 +7,6 @@ Library           Collections
 ${BROWSER}          Chrome
 ${URL}              https://coffee-cart.app/
 ${ESPRESSO_MACCHIATO}    Espresso Macchiato
-   
 
 *** Test Cases ***
 Increase Items Number In Cart
