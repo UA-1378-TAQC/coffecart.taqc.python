@@ -5,6 +5,7 @@ Library     SeleniumLibrary
 ${INPUT_NAME_XPATH}                //div[@class='modal']/descendant::input[@id='name']
 ${INPUT_EMAIL_XPATH}               //div[@class='modal']/descendant::input[@id='email']
 ${PAYMENT_SUBMIT_BUTTON_XPATH}     //div[@class='modal']/descendant::button[@id='submit-payment']
+${WINDOW_CLOSE_BUTTON_XPATH}       //div[@class='modal']/descendant::button[@class='close']
 
 *** Keywords ***
 Enter Name 
@@ -20,4 +21,8 @@ Enter Email
 Click Submit Button
     Wait Until Element Is Enabled    ${PAYMENT_SUBMIT_BUTTON_XPATH}
     Click Button    ${PAYMENT_SUBMIT_BUTTON_XPATH}
+
+Click Close Window Button
+    Wait Until Element Is Enabled    ${WINDOW_CLOSE_BUTTON_XPATH}
+    Click Button    ${WINDOW_CLOSE_BUTTON_XPATH}
 
