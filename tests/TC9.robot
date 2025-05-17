@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     Verify the correctness of decreasing the number of items on the "Cart" page
 Library           SeleniumLibrary
-Library            ../src/CartPage.py
+Library            ../src/TC9.py
 
 *** Variables ***
 ${BROWSER}          Chrome
@@ -10,10 +10,15 @@ ${URL}              https://coffee-cart.app/
 *** Test Cases ***
 Verify the correctness of decreasing the number of items on the "Cart" page
     Open Browser         ${URL}             ${BROWSER}
+    Sleep    time_=1
     Go To Menu Page
+    Sleep    time_=1
     Click Drink    drink_name=Espresso Macchiato
+    Sleep    time_=1
     Click Drink    drink_name=Espresso Macchiato
+    Sleep    time_=1
     Go To Cart Page
+    Sleep    time_=1
     Click Minus Button
     Sleep    time_=1
     Equal Value Of The Item    expected_data=$12.00 x 1

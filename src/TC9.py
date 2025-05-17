@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-
 def go_to_cart_page():
     sel = BuiltIn().get_library_instance('SeleniumLibrary')
     sel.click_element("//a[@href=\"/cart\"]")
@@ -18,12 +17,10 @@ def go_to_menu_page():
     sel.click_element("//a[@href=\"/\"]")
 
 def click_drink(drink_name):
-    # drink_name = str(drink_name)
     drink = {"Espresso":1,"Espresso Macchiato":2,"Cappuccino":3,"Mocha":4,"Flat White":5,"Americano":6,"Cafe Latte":7,"Espresso Con Panna":8,"Cafe Breve":9}
     sel = BuiltIn().get_library_instance('SeleniumLibrary')
     sel.click_element("//*[@id=\"app\"]/div[2]/ul/li[" + str(drink[drink_name]) + "]")
     
-
 def click_minus_button():
     sel = BuiltIn().get_library_instance('SeleniumLibrary')
     sel.click_element("//*[@id=\"app\"]/div[2]/div/ul/li[2]/div[2]/div/button[2]")
@@ -32,11 +29,7 @@ def equal_value_of_the_item(expected_data):
     sel_lib = BuiltIn().get_library_instance('SeleniumLibrary')
     actual_data = sel_lib.get_text("//*[@id=\"app\"]/div[2]/div/ul/li[2]/div[2]/span").strip()
 
-    if actual_data != expected_data:
-        raise AssertionError(
-            f"Expected '{expected_data}', but got '{actual_data}'"
-        )
-    else: return True
+    BuiltIn().should_be_equal(actual_data,expected_data,f"Expected '{expected_data}', but got '{actual_data}'")
 
 def equal_total_price(expected_price):
     sel_lib = BuiltIn().get_library_instance('SeleniumLibrary')
@@ -52,18 +45,10 @@ def equal_total(expected_data):
     sel_lib = BuiltIn().get_library_instance('SeleniumLibrary')
     actual_data = sel_lib.get_text("//*[@id=\"app\"]/div[2]/div/div[1]/button").strip()
 
-    if actual_data != expected_data:
-        raise AssertionError(
-            f"Expected '{expected_data}', but got '{actual_data}'"
-        )
-    else: return True
+    BuiltIn().should_be_equal(actual_data,expected_data,f"Expected '{expected_data}', but got '{actual_data}'")
 
 def equal_cart(expected_data):
     sel_lib = BuiltIn().get_library_instance('SeleniumLibrary')
     actual_data = sel_lib.get_text("//*[@id=\"app\"]/ul/li[2]/a").strip()
 
-    if actual_data != expected_data:
-        raise AssertionError(
-            f"Expected '{expected_data}', but got '{actual_data}'"
-        )
-    else: return True
+    BuiltIn().should_be_equal(actual_data,expected_data,f"Expected '{expected_data}', but got '{actual_data}'")
