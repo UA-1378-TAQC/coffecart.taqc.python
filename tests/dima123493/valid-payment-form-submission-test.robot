@@ -9,7 +9,7 @@ ${URL}              https://coffee-cart.app/
 ${VALID_NAME}       Andrii
 ${VALID_EMAIL}      andrii11@gmail.com
 ${message}
-${cart_string}
+${cart_value}
 
 *** Test Cases ***
 Verify Payment Form Accepts Valid Inputs
@@ -22,6 +22,6 @@ Verify Payment Form Accepts Valid Inputs
     Payment Form Submission.Click Submit Button
     ${message}=    Payment Form Submission.Verify Confirmation Message Appears
     Should Be Equal As Strings    ${message}    Thanks for your purchase. Please check your email for payment.
-    #${cart_string}= Payment Form Submission.Verify Cart Is Empty Or Total Resets
-    #Should Be Equal As Strings    ${cart_string}    Total: $0.00
+    ${cart_value}=    Payment Form Submission.Verify Cart Is Empty Or Total Resets
+    Should Be Equal As Strings    ${cart_value}    Total: $0.00
     Close Browser
