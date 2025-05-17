@@ -2,7 +2,7 @@
 Documentation     Validate payment form with valid inputs
 Resource          ../src/resources/common.robot
 Library           SeleniumLibrary
-Library           ../src/dima123493/PaymentForm.py
+Library           ../src/pages/PaymentForm.py
 Test Setup        Open Browser To Menu Page
 Test Teardown     Teardown Browser
 

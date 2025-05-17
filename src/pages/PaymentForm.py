@@ -12,6 +12,7 @@ class PaymentForm:
     SUBMIT_BUTTON = "//button[text()='Submit']"
     CONFIRMATION_MESSAGE = "//*[@id='app']/div[1]"
     EMPTY_CART_MESSAGE = "//*[@id='app']/div[2]/div[1]/button"
+    CLOSE_MODAL_WINDOW = "//*[@id='app']/div[2]/div[2]/div/section/button"
 
     def __init__(self):
         self.sel = BuiltIn().get_library_instance('SeleniumLibrary')
@@ -48,3 +49,6 @@ class PaymentForm:
 
     def verify_cart_is_empty_or_total_resets(self):
         return self.sel.get_text(self.EMPTY_CART_MESSAGE)
+
+    def close_modal_window(self):
+        return self.sel.click_element(self.CLOSE_MODAL_WINDOW)
