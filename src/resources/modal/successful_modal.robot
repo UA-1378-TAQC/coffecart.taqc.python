@@ -2,7 +2,7 @@
 Library     SeleniumLibrary
 
 *** Variables ***
-${SUCCSESS_POPUP}                //*[@id='app']/div[1]
+${SUCCSESS_POPUP}                //*[@class='snackbar success']
 *** Keywords ***
 Get Successful Text
     Wait Until Element Is Visible    ${SUCCSESS_POPUP}
