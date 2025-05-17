@@ -28,6 +28,10 @@ def click_minus_button():
     sel = BuiltIn().get_library_instance('SeleniumLibrary')
     sel.click_element("//*[@id=\"app\"]/div[2]/div/ul/li[2]/div[2]/div/button[2]")
 
+def click_plus_button():
+    sel = BuiltIn().get_library_instance('SeleniumLibrary')
+    sel.click_element("//*[@id=\"app\"]/div[2]/div/ul/li[2]/div[2]/div/button[1]")
+
 def equal_value_of_the_item(expected_data):
     sel_lib = BuiltIn().get_library_instance('SeleniumLibrary')
     actual_data = sel_lib.get_text("//*[@id=\"app\"]/div[2]/div/ul/li[2]/div[2]/span").strip()

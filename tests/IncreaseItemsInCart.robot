@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation     Verify that user can increase the number of items in the Cart
 Library           SeleniumLibrary
+Library            ../src/CartPage.py
 
 *** Variables ***
 ${BROWSER}          Chrome
@@ -10,19 +11,20 @@ ${ESPRESSO_MACCHIATO}    Espresso Macchiato
 *** Test Cases ***
 Increase Items Number In Cart
     Open Browser         ${URL}             ${BROWSER}
-    Click On Cup
+    Go To Menu Page
+    Sleep    time_=1
+    Click Drink    drink_name=Espresso Macchiato
+    Sleep    time_=1
     Go To Cart Page
-    ${item_name}=    Get Item Name
-    Should Be Equal    ${item_name}    ${ESPRESSO_MACCHIATO}
-    ${item_count}=    Get Item Count
-    Should Be Equal    ${item_count}    1
-    Click On Add Button
-    ${item_count}=    Get Item Count
-    Should Be Equal    ${item_count}    2
-    ${unit_desc}=    Get Unit Desc
-    Should Be Equal    ${unit_desc}    \$12.00 x 2
-    ${total_price}=    Get Total Price
-    Should Be Equal    ${total_price}    24.00
-    ${header_count}=    Get Header Count
-    Should Be Equal    ${header_count}    2
+    Sleep    time_=1
+    Equal Cart    expected_data=cart (1)
+    Equal Value Of The Item    expected_data=$12.00 x 1
+    Equal Total Price    expected_price=$12.00
+    Equal Total    expected_data=Total: $12.00
+    Click Plus Button
+    Sleep    time_=1
+    Equal Cart    expected_data=cart (2)
+    Equal Value Of The Item    expected_data=$12.00 x 2
+    Equal Total Price    expected_price=$24.00
+    Equal Total    expected_data=Total: $24.00
     Close Browser
