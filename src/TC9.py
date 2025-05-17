@@ -22,7 +22,6 @@ def click_drink(drink_name):
     sel = BuiltIn().get_library_instance('SeleniumLibrary')
     sel.click_element("//*[@id=\"app\"]/div[2]/ul/li[" + str(drink[drink_name]) + "]")
     
-
 def click_minus_button():
     sel = BuiltIn().get_library_instance('SeleniumLibrary')
     sel.click_element("//*[@id=\"app\"]/div[2]/div/ul/li[2]/div[2]/div/button[2]")
