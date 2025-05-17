@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation     Verify that user can increase the number of items in the Cart
 Library           SeleniumLibrary
-Library           Collections
 
 *** Variables ***
 ${BROWSER}          Chrome
