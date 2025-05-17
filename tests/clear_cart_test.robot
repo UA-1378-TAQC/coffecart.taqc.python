@@ -4,7 +4,6 @@ Resource    ../src/resources/pages/cart_page.robot
 Resource    ../src/resources/pages/menu_page.robot
 Resource    ../src/resources/modal/payment_detail_modal.robot
 Library      SeleniumLibrary
-Library    ../src/CartPage.py
 Test Setup        Open Browser To Menu Page
 Test Teardown     Teardown Browser
 
@@ -40,8 +39,3 @@ Clear A Cart With Tree Products
     menu_page.Verify Cart Link Equal    cart (0)
     menu_page.Verify Total Button Text    Total: $0.00
     menu_page.Verify Successful Popup Appears
-
-
-
-
-
