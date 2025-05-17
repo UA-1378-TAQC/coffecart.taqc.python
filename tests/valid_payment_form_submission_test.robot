@@ -4,7 +4,7 @@ Library           SeleniumLibrary
 Resource          ../src/resources/common.robot
 Resource          ../src/resources/pages/menu_page.robot
 Resource          ../src/resources/modal/payment_detail_modal.robot
-Resource          ../src/resources/modal/successfull_model.robot
+Resource          ../src/resources/modal/successful_model.robot
 Test Setup        Open Browser To Menu Page
 Test Teardown     Teardown Browser
 
@@ -20,6 +20,6 @@ Verify Payment Form Accepts Valid Inputs
     payment_detail_modal.Enter Name    ${VALID_NAME}
     payment_detail_modal.Enter Email   ${VALID_EMAIL}
     payment_detail_modal.Click Submit Button
-    ${message}=  successfull_model.Get Succsessfull Text
+    ${message}=  successful_model.Get Successful Text
     Should Be Equal As Strings    ${message}    Thanks for your purchase. Please check your email for payment.
     menu_page.Verify Total Button Text    Total: $0.00
