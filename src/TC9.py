@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-
 def go_to_cart_page():
     sel = BuiltIn().get_library_instance('SeleniumLibrary')
     sel.click_element("//a[@href=\"/cart\"]")
