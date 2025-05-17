@@ -14,7 +14,7 @@ ${VALID_EMAIL}      andrii11@gmail.com
 
 *** Test Cases ***
 Verify Payment Form Accepts Valid Inputs
-    Click On Drink Element     Flat White
+    menu_page.Click On Drink Element     Flat White
     menu_page.Click On Total button
     menu_page.Verify Payment Modal Appears
     payment_detail_modal.Enter Name    ${VALID_NAME}
