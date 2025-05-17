@@ -1,7 +1,10 @@
 *** Settings ***
 Documentation     Validate payment form with valid inputs
+Resource          ../src/resources/common.robot
 Library           SeleniumLibrary
 Library           ../src/dima123493/PaymentFormSubmission.py
+Test Setup        Open Browser To Menu Page
+Test Teardown     Teardown Browser
 
 *** Variables ***
 ${BROWSER}          Chrome
@@ -13,7 +16,6 @@ ${cart_value}
 
 *** Test Cases ***
 Verify Payment Form Accepts Valid Inputs
-    Open Browser         ${URL}             ${BROWSER}
     Payment Form Submission.Click on coffee cup    1
     Payment Form Submission.Click on total modal
     Payment Form Submission.Confirm Payment Form Is Visible
