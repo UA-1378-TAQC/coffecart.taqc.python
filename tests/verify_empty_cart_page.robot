@@ -6,7 +6,6 @@ Library            ../src/CartPage.py
 *** Variables ***
 ${BROWSER}          Chrome
 ${URL}              https://coffee-cart.app/
-${message}
 
 *** Test Cases ***
 Verify Empty Cart State
