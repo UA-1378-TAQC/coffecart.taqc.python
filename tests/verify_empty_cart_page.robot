@@ -1,16 +1,16 @@
 *** Settings ***
-Documentation     Перевірка стану порожнього кошика та обмеження кнопки замовлення при порожньому кошику
 Library           SeleniumLibrary
-Library            ../src/CartPage.py
-
-*** Variables ***
-${BROWSER}          Chrome
-${URL}              https://coffee-cart.app/
+Resource          ../src/resources/common.robot
+Resource          ../src/resources/pages/cart_page.robot
+Resource          ../src/resources/pages/menu_page.robot
+Test Setup        Open Browser To Menu Page
+Test Teardown     Teardown Browser
 
 *** Test Cases ***
-Verify Empty Cart State
-    Open Browser         ${URL}             ${BROWSER}
+Verify order button restriction with empty cart
     Go To Cart Page
-    ${message}=    Get Empty Cart Message
-    Should Be Equal As Strings    ${message}    No coffee, go add some.
-    Close Browser
+    Cart Page Should Contain Empty Text Element
+    Total Button Should Not Be Visible
+
+    Go To Menu Page
+    Total Button Should Be Visible
