@@ -5,6 +5,8 @@ Library         SeleniumLibrary
 ${DRINK_XPATH}                  //*[@id='app']/div[2]/ul/li/h4[normalize-space(text())='{}']/following-sibling::*
 ${CART_PAGE_LINK_XPATH}         //a[@aria-label='Cart page']
 ${TOTAL_BUTTON_XPATH}           //button[@class='pay']
+${PLUS_BUTTON_XPATH_CART_MODAL}            //*[@id="app"]/div[2]/div[1]/ul/li/div[2]/button[1]
+${MINUS_BUTTON_XPATH_CART_MODAL}           //*[@id="app"]/div[2]/div[1]/ul/li/div[2]/button[2]    
 ${PAYMENT_MODAL_XPATH}          //div[@class='modal']
 ${SUCCESSFUL_POPUP_XPATH}       //div[contains(@class,'snackbar success')]
 
@@ -22,6 +24,12 @@ Go to Cart Page
 Click On Total Button
     Wait Until Element Is Enabled    ${TOTAL_BUTTON_XPATH}
     Click Button    ${TOTAL_BUTTON_XPATH}
+
+Click Plus Button
+    Click Element    xpath=${PLUS_BUTTON_XPATH_CART_MODAL}
+
+Click Minus Button
+    Click Element    xpath=${MINUS_BUTTON_XPATH_CART_MODAL}
 
 Verify Payment Modal Appears
     Wait Until Element Is Visible    ${PAYMENT_MODAL_XPATH}
