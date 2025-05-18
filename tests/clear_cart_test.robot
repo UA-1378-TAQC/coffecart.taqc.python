@@ -4,7 +4,7 @@ Resource    ../src/resources/pages/cart_page.robot
 Resource    ../src/resources/pages/menu_page.robot
 Resource    ../src/resources/modal/payment_detail_modal.robot
 Library      SeleniumLibrary
-Library    ../src/CartPage.py
+Library    ../src/scripts/CartPage.py
 Test Setup        Open Browser To Menu Page
 Test Teardown     Teardown Browser
 
