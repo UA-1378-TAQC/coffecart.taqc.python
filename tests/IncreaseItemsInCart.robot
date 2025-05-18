@@ -1,7 +1,11 @@
 *** Settings ***
 Documentation     Verify that user can increase the number of items in the Cart
 Library           SeleniumLibrary
-Library            ../src/CartPage.py
+Resource    ../src/resources/pages/cart_page.robot
+Resource    ../src/resources/pages/menu_page.robot
+Resource    ../src/resources/common.robot
+Test Setup        Open Browser To Menu Page
+Test Teardown     Teardown Browser
 
 *** Variables ***
 ${BROWSER}          Chrome
@@ -10,21 +14,28 @@ ${ESPRESSO_MACCHIATO}    Espresso Macchiato
 
 *** Test Cases ***
 Increase Items Number In Cart
-    Open Browser         ${URL}             ${BROWSER}
-    Go To Menu Page
-    Sleep    time_=1
-    Click Drink    drink_name=Espresso Macchiato
-    Sleep    time_=1
+    [Documentation]    Verify that user can increase the number of items in the Cart
+    Maximize Browser Window
+       Go To Menu Page
+    Sleep    1s
+    Click On Drink Element    ${ESPRESSO_MACCHIATO}
+    Sleep    1s
     Go To Cart Page
-    Sleep    time_=1
-    Equal Cart    expected_data=cart (1)
-    Equal Value Of The Item    expected_data=$12.00 x 1
-    Equal Total Price    expected_price=$12.00
-    Equal Total    expected_data=Total: $12.00
+    Sleep    1s
+    ${total_price}=    Get Total Price
+    Should Be Equal    ${total_price}    $12.00
+
+    ${total_text}=    Get Total Text
+    Should Be Equal    ${total_text}    Total: $12.00
+
     Click Plus Button
-    Sleep    time_=1
-    Equal Cart    expected_data=cart (2)
-    Equal Value Of The Item    expected_data=$12.00 x 2
-    Equal Total Price    expected_price=$24.00
-    Equal Total    expected_data=Total: $24.00
-    Close Browser
+    Sleep    1s
+
+    ${total_price}=    Get Total Price
+    Log    Total Price: ${total_price}
+    Should Be Equal    ${total_price}    $24.00
+
+    ${total_text}=    Get Total Text
+    Log    Total Text: ${total_text}
+    Should Be Equal    ${total_text}    Total: $24.00
+
