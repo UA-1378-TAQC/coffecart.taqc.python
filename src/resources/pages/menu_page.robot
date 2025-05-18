@@ -1,12 +1,12 @@
 *** Settings ***
 Library         SeleniumLibrary
+
 *** Variables ***
 ${DRINK_XPATH}                  //*[@id='app']/div[2]/ul/li/h4[normalize-space(text())='{}']/following-sibling::*
 ${CART_PAGE_LINK_XPATH}         //a[@aria-label='Cart page']
 ${TOTAL_BUTTON_XPATH}           //button[@class='pay']
 ${PAYMENT_MODAL_XPATH}          //div[@class='modal']
 ${SUCCESSFUL_POPUP_XPATH}       //div[contains(@class,'snackbar success')]
-
 
 *** Keywords ***
 Click On Drink Element
@@ -18,7 +18,7 @@ Click On Drink Element
 Go to Cart Page
     Wait Until Element Is Visible    ${CART_PAGE_LINK_XPATH}
     Click Link    ${CART_PAGE_LINK_XPATH}
-    
+
 Click On Total Button
     Wait Until Element Is Enabled    ${TOTAL_BUTTON_XPATH}
     Click Button    ${TOTAL_BUTTON_XPATH}
