@@ -29,7 +29,7 @@ Perfect for testing user interaction and front-end logic.
 
 - 🤖 [Robot Framework](https://robotframework.org/) — keyword-driven test automation
 - 🐍 Python 3.11+
-- 🧪 [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/) — for browser automation
+- 📚 [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/) — for browser automation
 - 📄 Custom Python keywords (e.g. `CartPage.py`)
 - 🗂 Page Object Model (POM)
 - 📦 `requirements.txt` for Python dependencies
