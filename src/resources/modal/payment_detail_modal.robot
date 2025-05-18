@@ -26,3 +26,5 @@ Click Close Window Button
     Wait Until Element Is Enabled    ${WINDOW_CLOSE_BUTTON_XPATH}
     Click Button    ${WINDOW_CLOSE_BUTTON_XPATH}
 
+Verify Payment Modal Is Visible
+    Element Should Be Visible    ${INPUT_NAME_XPATH}
