@@ -89,4 +89,3 @@ Verify Drink Is In Cart
     ${item_xpath}=    Set Variable    //li[contains(text(), '${drink_name}')]
     Wait Until Element Is Visible    ${item_xpath}    timeout=5s
 
-    

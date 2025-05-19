@@ -48,4 +48,7 @@ Verify Cart Link Equal
     [Arguments]     ${link_text}
     Element Text Should Be    ${CART_PAGE_LINK_XPATH}    ${link_text}
 
+Verify Lucky Day Popup Appears
+    Wait Until Element Is Visible    ${POPUP_XPATH}
+
     

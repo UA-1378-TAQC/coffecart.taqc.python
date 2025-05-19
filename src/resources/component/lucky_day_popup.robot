@@ -9,6 +9,8 @@ ${POPUP_TIMEOUT}     10s
 ${ESPRESSO}         Espresso
 ${ESPRESSO_MACCHIATO}  Espresso Macchiato
 ${CAPPUCCINO}       Cappuccino
+${YES_POPUP_BUTTON}    //div[@class='promo']//button[contains(text(), 'Yes, of course!')]
+
 
 *** Keywords ***
 Add Three Items To Trigger Popup
@@ -24,3 +26,7 @@ Verify Popup Appears
 Verify Popup Disappears Automatically
     Wait Until Element Is Not Visible    ${POPUP_XPATH}    timeout=${POPUP_TIMEOUT}
     Page Should Not Contain Element    ${POPUP_XPATH}
+
+Click Yes On Successful Popup
+    Wait Until Element Is Visible    ${YES_POPUP_BUTTON}
+    Click Button    ${YES_POPUP_BUTTON}
