@@ -1,25 +1,27 @@
 *** Settings ***
-Library     SeleniumLibrary
+Library    SeleniumLibrary
 
 *** Variables ***
-${INPUT_NAME_XPATH}                //div[@class='modal']/descendant::input[@id='name']
-${INPUT_EMAIL_XPATH}               //div[@class='modal']/descendant::input[@id='email']
-${PAYMENT_SUBMIT_BUTTON_XPATH}     //div[@class='modal']/descendant::button[@id='submit-payment']
-${WINDOW_CLOSE_BUTTON_XPATH}       //div[@class='modal']/descendant::button[@class='close']
+${INPUT_NAME_XPATH}                 //div[@class='modal']//input[@id='name']
+${INPUT_EMAIL_XPATH}                //div[@class='modal']//input[@id='email']
+${PROMO_CHECKBOX_XPATH}             //div[@class='modal']//input[@id='promotion']
+${PAYMENT_SUBMIT_BUTTON_XPATH}      //div[@class='modal']//button[@id='submit-payment']
+${WINDOW_CLOSE_BUTTON_XPATH}        //div[@class='modal']//button[@class='close']
 
 *** Keywords ***
-Enter Name 
+Enter Name
     [Arguments]    ${name}
     Wait Until Element Is Visible    ${INPUT_NAME_XPATH}
     Input Text    ${INPUT_NAME_XPATH}    ${name}
 
-Clear Name 
-    Clear Element Text    ${INPUT_NAME_XPATH}
-
-Enter Email 
+Enter Email
     [Arguments]    ${email}
     Wait Until Element Is Visible    ${INPUT_EMAIL_XPATH}
     Input Text    ${INPUT_EMAIL_XPATH}    ${email}
+
+Mark Promotion Checkbox
+    Wait Until Element Is Visible    ${PROMO_CHECKBOX_XPATH}
+    Click Element    ${PROMO_CHECKBOX_XPATH}
 
 Click Submit Button
     Wait Until Element Is Enabled    ${PAYMENT_SUBMIT_BUTTON_XPATH}
@@ -32,8 +34,18 @@ Click Close Window Button
 Verify Payment Modal Is Visible
     Element Should Be Visible    ${INPUT_NAME_XPATH}
 
-Verify Name Validation Message
-    [Arguments]    ${expected_message}
-    ${element}=    Get WebElement    ${INPUT_NAME_XPATH}
-    ${actual_message}=    Get Element Attribute    ${INPUT_NAME_XPATH}    validationMessage
-    Should Be Equal    ${actual_message}    ${expected_message}
+Verify Name Field Value
+    [Arguments]    ${expected}
+    ${actual}=    Get Element Attribute    ${INPUT_NAME_XPATH}    value
+    Should Be Equal    ${actual}    ${expected}
+
+Verify Email Field Value
+    [Arguments]    ${expected}
+    ${actual}=    Get Element Attribute    ${INPUT_EMAIL_XPATH}    value
+    Should Be Equal    ${actual}    ${expected}
+
+Verify Checkbox Is Selected
+    Checkbox Should Be Selected    ${PROMO_CHECKBOX_XPATH}
+
+Verify Checkbox Is Not Selected
+    Checkbox Should Not Be Selected    ${PROMO_CHECKBOX_XPATH}
