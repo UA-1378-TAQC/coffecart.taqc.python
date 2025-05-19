@@ -2,10 +2,13 @@
 Library     SeleniumLibrary
 
 *** Variables ***
-${SUCCSESS_POPUP}                //*[@class='snackbar success']
+${SUCCESS_POPUP}                //*[@class='snackbar success']
 
 *** Keywords ***
 Get Successful Text
-    Wait Until Element Is Visible    ${SUCCSESS_POPUP}
-    ${text}=    Get Text    ${SUCCSESS_POPUP}
+    Wait Until Element Is Visible    ${SUCCESS_POPUP}
+    ${text}=    Get Text    ${SUCCESS_POPUP}
     RETURN    ${text}
+
+
+
