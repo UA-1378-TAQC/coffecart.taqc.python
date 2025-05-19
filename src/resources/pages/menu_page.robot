@@ -20,7 +20,7 @@ Click On Drink Element
 Go to Cart Page
     Wait Until Element Is Visible    ${CART_PAGE_LINK_XPATH}
     Click Link    ${CART_PAGE_LINK_XPATH}
- 
+
 Click On Total Button
     Wait Until Element Is Enabled    ${TOTAL_BUTTON_XPATH}
     Click Button    ${TOTAL_BUTTON_XPATH}
