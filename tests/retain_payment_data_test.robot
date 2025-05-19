@@ -13,7 +13,7 @@ Test Teardown     Teardown Browser
 *** Variables ***
 ${DRINK}          Flat White
 ${NAME}           TestUser
-${EMAIL}          testuser@gmail.com.
+${EMAIL}          testuser@gmail.com
 
 *** Test Cases ***
 Retain Modal Data On Menu Page And Reset On Cart Page
