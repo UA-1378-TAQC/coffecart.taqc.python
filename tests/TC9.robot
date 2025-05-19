@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     Verify the correctness of decreasing the number of items on the "Cart" page
 Library    SeleniumLibrary
-Library    ../src/TC9.py
+Library     ../src/scripts/TC9.py
 Resource    ../src/resources/common.robot
 Resource    ../src/resources/pages/cart_page.robot
 Resource    ../src/resources/pages/menu_page.robot
