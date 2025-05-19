@@ -26,10 +26,10 @@ Go To Menu Page
 Verify Payment Modal Appears
     Wait Until Element Is Visible    ${PAYMENT_MODAL_XPATH}
 
-Click Plus Button
+Click Plus Button On Cart Page
     Click Element    xpath=${PLUS_BUTTON_XPATH}
 
-Click Minus Button
+Click Minus Button On Cart Page
     Click Element    xpath=${MINUS_BUTTON_XPATH}
 
 Get Total Price
@@ -64,7 +64,7 @@ Cart Page Should Contain Empty Text Element
     Wait Until Element Is Visible    ${EMPTY_TEXT_XPATH}
     Element Should Be Visible    ${EMPTY_TEXT_XPATH}
 
-Verify Price And Amout
+Verify Price And Amount
     [Arguments]     ${expected_data}
     ${actual_data}=    Get Cart Data
     Should Be Equal    ${actual_data}    ${expected_data}
