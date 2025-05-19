@@ -13,6 +13,9 @@ Enter Name
     Wait Until Element Is Visible    ${INPUT_NAME_XPATH}
     Input Text    ${INPUT_NAME_XPATH}    ${name}
 
+Clear Name 
+    Clear Element Text    ${INPUT_NAME_XPATH}
+
 Enter Email 
     [Arguments]    ${email}
     Wait Until Element Is Visible    ${INPUT_EMAIL_XPATH}
@@ -28,3 +31,9 @@ Click Close Window Button
 
 Verify Payment Modal Is Visible
     Element Should Be Visible    ${INPUT_NAME_XPATH}
+
+Verify Name Validation Message
+    [Arguments]    ${expected_message}
+    ${element}=    Get WebElement    ${INPUT_NAME_XPATH}
+    ${actual_message}=    Get Element Attribute    ${INPUT_NAME_XPATH}    validationMessage
+    Should Be Equal    ${actual_message}    ${expected_message}

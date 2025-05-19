@@ -24,12 +24,20 @@ Increase Items Number In Cart
 
     ${total_text}=    Get Total Text
     Should Be Equal    ${total_text}    Total: $12.00
+    
+    Verify Price And Amount    $12.00 x 1
+    
+    Verify Cart Amount    cart (1)
 
-    Click Plus Button
+    Click Plus Button On Cart Page
 
     ${total_price}=    Get Total Price
     Should Be Equal    ${total_price}    $24.00
 
     ${total_text}=    Get Total Text
     Should Be Equal    ${total_text}    Total: $24.00
+    
+    Verify Price And Amount    $12.00 x 2
+    
+    Verify Cart Amount    cart (2)
 
