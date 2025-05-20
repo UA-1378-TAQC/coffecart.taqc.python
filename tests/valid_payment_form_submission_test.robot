@@ -17,12 +17,12 @@ ${EMPTY_CART_VALES}    Total: $0.00
 
 *** Test Cases ***
 Verify Payment Form Accepts Valid Inputs
-    menu_page.Click On Drink Element     ${TESTING_DRINK_NAME}
-    menu_page.Click On Total button
-    menu_page.Verify Payment Modal Appears
-    payment_detail_modal.Enter Name    ${VALID_NAME}
-    payment_detail_modal.Enter Email   ${VALID_EMAIL}
-    payment_detail_modal.Click Submit Button
-    ${message}=  successful_modal.Get Successful Text
+    Click On Drink Element     ${TESTING_DRINK_NAME}
+    Click On Total button
+    Verify Payment Modal Appears
+    Enter Name    ${VALID_NAME}
+    Enter Email   ${VALID_EMAIL}
+    Click Submit Button
+    ${message}=  Get Successful Text
     Should Be Equal As Strings    ${message}    ${SUCCESSFULL_POPUP_TEXT}
-    menu_page.Verify Total Button Text    ${EMPTY_CART_VALES}
+    Verify Total Button Text    ${EMPTY_CART_VALES}
