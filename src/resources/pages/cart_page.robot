@@ -14,6 +14,7 @@ ${EMPTY_TEXT_XPATH}    //*[contains(text(),"No coffee, go add some.")]
 ${DATA_IN_CART_XPATH}    //*[@id="app"]/div[2]/div/ul/li[2]/div[2]/span
 ${DATA_IN_CART_TOTAL_PRICE_XPATH}    //*[@id="app"]/div[2]/div/ul/li[2]/div[3]
 ${CART_AMOUNT_XPATH}    //*[@id="app"]/ul/li[2]/a
+
 *** Keywords ***
 Click On Total button
     Wait Until Element Is Visible    ${TOTAL_BUTTON_XPATH}
