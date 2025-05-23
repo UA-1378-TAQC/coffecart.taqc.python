@@ -3,7 +3,6 @@ Documentation     [TC7] Verification of pop-up cart functioning (buttons +/-)
 Library           SeleniumLibrary
 Resource          ../src/resources/common.robot
 Resource          ../src/resources/pages/menu_page.robot
-Resource          ../src/resources/pages/cart_page.robot
 
 Test Setup        Open Browser To Menu Page
 Test Teardown     Teardown Browser
