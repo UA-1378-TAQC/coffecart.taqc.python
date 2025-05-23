@@ -31,7 +31,7 @@ Lucky Day Pop-up Test Set 2
 Lucky Day Pop-up Appearing For Drink Set
     [Arguments]    @{drinks}
     FOR    ${drink}    IN    @{drinks}
-        menu_page.Click On Drink Element    ${drink}
+        Click On Drink Element    ${drink}
     END
     Verify Lucky Day Popup Appears
     Click Yes On Successful Popup
