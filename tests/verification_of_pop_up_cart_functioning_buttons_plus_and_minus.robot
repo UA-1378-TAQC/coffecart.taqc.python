@@ -22,11 +22,13 @@ Verify Pop-up Cart Functioning With Plus And Minus Buttons
     menu_page.Click On Drink Element    ${DRINK}
     menu_page.Verify Total Button Text  ${TOTAL_1}
 
-    menu_page.Hover Over Total Button Plus
+    menu_page.Hover Over Total Button
+
+    menu_page.Click Plus Button
     menu_page.Verify Total Button Text   ${TOTAL_2}
 
-    menu_page.Hover Over Total Button Minus
+    menu_page.Click Minus Button
     menu_page.Verify Total Button Text   ${TOTAL_1}
 
-    menu_page.Hover Over Total Button Minus
+    menu_page.Click Minus Button
     menu_page.Verify Total Button Text   ${TOTAL_0}
