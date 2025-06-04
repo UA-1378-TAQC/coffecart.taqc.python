@@ -32,15 +32,4 @@ Verify the correctness of decreasing the number of items on the "Cart" page
     Verify Cart Amount    ${STEP_9_TEST_DATA}
     Click Minus Button On Cart Page
 
-    # menu_page.Click On Drink Element    drink_name=${STEP_2_TEST_DATA}
-    # menu_page.Click On Drink Element    drink_name=${STEP_2_TEST_DATA}
-    # menu_page.Go to Cart Page
-    
-    # cart_page.Click Minus Button On Cart Page
-    # cart_page.Verify Price And Amount    ${STEP_6_TEST_DATA}
-    # cart_page.Verify Price    ${STEP_7_TEST_DATA}
-    # cart_page.Verify Total Price    ${STEP_8_TEST_DATA}
-    # cart_page.Verify Cart Amount    ${STEP_9_TEST_DATA}
-    # cart_page.Click Minus Button On Cart Page
-
     Close Browser
