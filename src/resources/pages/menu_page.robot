@@ -51,4 +51,6 @@ Verify Cart Link Equal
 Verify Lucky Day Popup Appears
     Wait Until Element Is Visible    ${POPUP_XPATH}
 
+Hover Over Total Button
+    Mouse Over    ${TOTAL_BUTTON_XPATH}
     
