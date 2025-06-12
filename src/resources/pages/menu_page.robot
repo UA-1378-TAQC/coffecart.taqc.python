@@ -53,4 +53,11 @@ Verify Lucky Day Popup Appears
 
 Hover Over Total Button
     Mouse Over    ${TOTAL_BUTTON_XPATH}
+
+    *** Keywords ***
+Click Coffee Cup Icon By Index
+    [Arguments]    ${index}
+    ${locator}=    Set Variable      (//div[@class='cup-body'])[${index + 1}]
+    Click Element    xpath=${locator}
+
     
