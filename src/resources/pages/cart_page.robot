@@ -2,21 +2,20 @@
 Library     SeleniumLibrary
 
 *** Variables ***
-${MENU_PAGE_LINK_XPATH}    //a[@aria-label='Menu page']
-${TOTAL_BUTTON_XPATH}    //button[@class='pay']
-${PAYMENT_MODAL_XPATH}    //div[@class='modal']
-
-${TOTAL_PRICE_XPATH}    //div[@class='unit-controller']/../following-sibling::*[1]
-${PLUS_BUTTON_XPATH}    //*[@id=\"app\"]/div[2]/div/ul/li[2]/div[2]/div/button[1]
-${MINUS_BUTTON_XPATH}    //*[@id="app"]/div[2]/div/ul/li[2]/div[2]/div/button[2]                         
-${TOTAL_BUTTON_XPATH}   //button[contains(text(), 'Total')]
-${EMPTY_TEXT_XPATH}    //*[contains(text(),"No coffee, go add some.")]
-${DATA_IN_CART_XPATH}    //*[@id="app"]/div[2]/div/ul/li[2]/div[2]/span
+${MENU_PAGE_LINK_XPATH}         //a[@aria-label='Menu page']
+${TOTAL_BUTTON_XPATH}           //button[@class='pay']
+${PAYMENT_MODAL_XPATH}          //div[@class='modal']
+${TOTAL_PRICE_XPATH}            //div[@class='unit-controller']/../following-sibling::*[1]
+${PLUS_BUTTON_XPATH}            //*[@id="app"]/div[2]/div/ul/li[2]/div[2]/div/button[1]
+${MINUS_BUTTON_XPATH}           //*[@id="app"]/div[2]/div/ul/li[2]/div[2]/div/button[2]
+${EMPTY_TEXT_XPATH}             //*[contains(text(),"No coffee, go add some.")]
+${DATA_IN_CART_XPATH}           //*[@id="app"]/div[2]/div/ul/li[2]/div[2]/span
 ${DATA_IN_CART_TOTAL_PRICE_XPATH}    //*[@id="app"]/div[2]/div/ul/li[2]/div[3]
-${CART_AMOUNT_XPATH}    //*[@id="app"]/ul/li[2]/a
+${CART_AMOUNT_XPATH}            //*[@id="app"]/ul/li[2]/a
+${MODAL_CLOSE_BUTTON_XPATH}     //div[@class='modal']//section/button
 
 *** Keywords ***
-Click On Total button
+Click On Total Button
     Wait Until Element Is Visible    ${TOTAL_BUTTON_XPATH}
     Click Button    ${TOTAL_BUTTON_XPATH}
 
@@ -26,6 +25,8 @@ Go To Menu Page
 
 Verify Payment Modal Appears
     Wait Until Element Is Visible    ${PAYMENT_MODAL_XPATH}
+    Element Should Be Visible    ${PAYMENT_MODAL_XPATH}
+    ...    msg=Payment modal should appear on click in cart page
 
 Click Plus Button On Cart Page
     Click Element    xpath=${PLUS_BUTTON_XPATH}
@@ -90,3 +91,15 @@ Verify Drink Is In Cart
     ${item_xpath}=    Set Variable    //li[contains(text(), '${drink_name}')]
     Wait Until Element Is Visible    ${item_xpath}    timeout=5s
 
+Hover Over Total Button On Cart Page
+    Mouse Over    ${TOTAL_BUTTON_XPATH}
+
+Get CSS Property Value
+    [Arguments]    ${locator}    ${property}
+    ${value}=    Execute JavaScript
+    ...    return window.getComputedStyle(document.evaluate("${locator}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).getPropertyValue("${property}");
+    RETURN    ${value}
+
+Close Modal Window On Cart Page
+    Wait Until Element Is Visible    ${MODAL_CLOSE_BUTTON_XPATH}
+    Click Element    ${MODAL_CLOSE_BUTTON_XPATH}
