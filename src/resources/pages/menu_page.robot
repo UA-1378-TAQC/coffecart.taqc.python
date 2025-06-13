@@ -9,6 +9,8 @@ ${PLUS_BUTTON_XPATH_CART_MODAL}            //*[@id="app"]/div[2]/div[1]/ul/li/di
 ${MINUS_BUTTON_XPATH_CART_MODAL}           //*[@id="app"]/div[2]/div[1]/ul/li/div[2]/button[2]    
 ${PAYMENT_MODAL_XPATH}          //div[@class='modal']
 ${SUCCESSFUL_POPUP_XPATH}       //div[contains(@class,'snackbar success')]
+${LUCKY_DAY_POPUP_XPATH}                  //*[@id="app"]/div[2]
+${CART_FILLING_MENU_PAGE_XPATH}    //*[@id="app"]/div[2]/div[1]/ul/li/div[1]
 
 *** Keywords ***
 Click On Drink Element
@@ -49,7 +51,11 @@ Verify Cart Link Equal
     Element Text Should Be    ${CART_PAGE_LINK_XPATH}    ${link_text}
 
 Verify Lucky Day Popup Appears
-    Wait Until Element Is Visible    ${POPUP_XPATH}
+    Wait Until Element Is Visible    ${LUCKY_DAY_POPUP_XPATH}
+
+Verify Cart On Menu Page
+    [Arguments]     ${value}
+    Element Text Should Be    ${CART_FILLING_MENU_PAGE_XPATH}    ${value}
 
 Hover Over Total Button
     Mouse Over    ${TOTAL_BUTTON_XPATH}
