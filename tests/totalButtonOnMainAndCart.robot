@@ -9,8 +9,6 @@ Test Teardown     Teardown Browser
 *** Variables ***
 ${GOLDEN_COLOR}                 rgb(218, 165, 32)
 ${ESPRESSO_DRINK}               Espresso
-${TOTAL_BUTTON_XPATH}           //button[@class='pay']
-${CART_COMPONENT_ROOT_XPATH}    //ul[@class='cart-preview show']
 
 *** Test Cases ***
 Test Total Button On Menu And Cart Pages
@@ -19,33 +17,19 @@ Test Total Button On Menu And Cart Pages
     Go To Menu Page
     Click On Drink Element    ${ESPRESSO_DRINK}
 
-    menu_page.Hover Over Total Button On Menu Page
+    Hover Over Total Button
     Verify Total Button Hover Color    ${GOLDEN_COLOR}
     Verify Cart Preview Is Displayed
 
-    menu_page.Click On Total Button
-    menu_page.Verify Payment Modal Appears
-    menu_page.Close Modal Window On Menu Page
+    Click On Total Button On Menu Page
+    Verify Payment Modal Appears On Menu Page
+    Close Modal Window On Menu Page
 
-    menu_page.Go To Cart Page
+    Go To Cart Page
 
-    cart_page.Hover Over Total Button On Cart Page
+    Hover Over Total Button On Cart Page
     Verify Total Button Hover Color    ${GOLDEN_COLOR}
 
-    cart_page.Click On Total Button
-    cart_page.Verify Payment Modal Appears
-    cart_page.Close Modal Window On Cart Page
-
-
-*** Keywords ***
-
-Verify Total Button Hover Color
-    [Arguments]    ${expected_color}
-    ${actual_color}=    menu_page.Get CSS Property Value    ${TOTAL_BUTTON_XPATH}    color
-    Should Be Equal    ${actual_color}    ${expected_color}
-    ...    msg=Text color should change to ${expected_color} on hover
-
-Verify Cart Preview Is Displayed
-    Wait Until Element Is Visible    ${CART_COMPONENT_ROOT_XPATH}
-    Element Should Be Visible    ${CART_COMPONENT_ROOT_XPATH}
-    ...    msg=Pop-up cart should appear on hover
+    Click On Total Button On Cart Page
+    Verify Payment Modal Appears On Cart Page
+    Close Modal Window On Cart Page

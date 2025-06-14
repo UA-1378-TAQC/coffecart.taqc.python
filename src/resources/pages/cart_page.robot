@@ -15,7 +15,7 @@ ${CART_AMOUNT_XPATH}            //*[@id="app"]/ul/li[2]/a
 ${MODAL_CLOSE_BUTTON_XPATH}     //div[@class='modal']//section/button
 
 *** Keywords ***
-Click On Total Button
+Click On Total Button On Cart Page
     Wait Until Element Is Visible    ${TOTAL_BUTTON_XPATH}
     Click Button    ${TOTAL_BUTTON_XPATH}
 
@@ -23,7 +23,7 @@ Go To Menu Page
     Wait Until Element Is Visible    ${MENU_PAGE_LINK_XPATH}
     Click Link    ${MENU_PAGE_LINK_XPATH}
 
-Verify Payment Modal Appears
+Verify Payment Modal Appears On Cart Page
     Wait Until Element Is Visible    ${PAYMENT_MODAL_XPATH}
     Element Should Be Visible    ${PAYMENT_MODAL_XPATH}
     ...    msg=Payment modal should appear on click in cart page

@@ -25,7 +25,7 @@ Go to Cart Page
     Wait Until Element Is Visible    ${CART_PAGE_LINK_XPATH}
     Click Link    ${CART_PAGE_LINK_XPATH}
 
-Click On Total Button
+Click On Total Button On Menu Page
     Wait Until Element Is Enabled    ${TOTAL_BUTTON_XPATH}
     Click Button    ${TOTAL_BUTTON_XPATH}
 
@@ -35,7 +35,7 @@ Click Plus Button
 Click Minus Button
     Click Element    xpath=${MINUS_BUTTON_XPATH_CART_MODAL}
 
-Verify Payment Modal Appears
+Verify Payment Modal Appears On Menu Page
     Wait Until Element Is Visible    ${PAYMENT_MODAL_XPATH}
     Element Should Be Visible    ${PAYMENT_MODAL_XPATH}
     ...    msg=Payment modal should appear on click
@@ -73,3 +73,14 @@ Get CSS Property Value
 Close Modal Window On Menu Page
     Wait Until Element Is Visible    ${MODAL_CLOSE_BUTTON_XPATH}
     Click Element    ${MODAL_CLOSE_BUTTON_XPATH}
+
+Verify Total Button Hover Color
+    [Arguments]    ${expected_color}
+    ${actual_color}=    menu_page.Get CSS Property Value    ${TOTAL_BUTTON_XPATH}    color
+    Should Be Equal    ${actual_color}    ${expected_color}
+    ...    msg=Text color should change to ${expected_color} on hover
+
+Verify Cart Preview Is Displayed
+    Wait Until Element Is Visible    ${CART_COMPONENT_ROOT_XPATH}
+    Element Should Be Visible    ${CART_COMPONENT_ROOT_XPATH}
+    ...    msg=Pop-up cart should appear on hover
