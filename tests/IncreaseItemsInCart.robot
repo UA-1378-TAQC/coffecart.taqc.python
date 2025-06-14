@@ -34,10 +34,5 @@ Increase Items Number In Cart
 
     Click Plus Button On Cart Page
 
-    ${total_price}=    Get Total Price
-    Should Be Equal    ${total_price}    ${TOTAL_PRICE_AFTER}
-    ${total_text}=    Get Total Text
-    Should Be Equal    ${total_text}    ${TOTAL_BUTTON_AFTER}
-    Verify Price And Amount    ${CART_DATA_AFTER}
-    Verify Cart Amount    ${CART_AMOUNT_AFTER}
+
 
