@@ -11,6 +11,7 @@ ${PAYMENT_MODAL_XPATH}          //div[@class='modal']
 ${SUCCESSFUL_POPUP_XPATH}       //div[contains(@class,'snackbar success')]
 ${LUCKY_DAY_POPUP_XPATH}                  //*[@id="app"]/div[2]
 ${CART_FILLING_MENU_PAGE_XPATH}    //*[@id="app"]/div[2]/div[1]/ul/li/div[1]
+${DRINK_NAMES_LIST_XPATH}    //*[@id="app"]/div[2]/ul/li/h4
 
 *** Keywords ***
 Click On Drink Element
@@ -59,4 +60,7 @@ Verify Cart On Menu Page
 
 Hover Over Total Button
     Mouse Over    ${TOTAL_BUTTON_XPATH}
-    
+
+Get Drink Name Elements
+    ${elements}=    Get WebElements    ${DRINK_NAMES_LIST_XPATH}
+    [Return]    ${elements}
