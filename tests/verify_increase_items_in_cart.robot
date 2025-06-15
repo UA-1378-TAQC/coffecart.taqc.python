@@ -8,15 +8,15 @@ Test Setup        Open Browser To Menu Page
 Test Teardown     Teardown Browser
 
 *** Variables ***
-${TESTING_DRINK}    Espresso Macchiato
-${TOTAL_PRICE_BEFORE}    '$12.00',
-${TOTAL_BUTTON_BEFORE}    'TOTAL: $12.00',
-${CART_DATA_BEFORE}    '$12.00 X 1',
-${CART_AMOUNT_BEFORE}    'CART (1)',
-${TOTAL_PRICE_AFTER}    '$24.00',
-${TOTAL_BUTTON_AFTER}    'TOTAL: $24.00',
-${CART_DATA_AFTER}    '$12.00 X 2',
-${CART_AMOUNT_AFTER}    'CART (2)',
+${TESTING_DRINK}        Espresso Macchiato
+${TOTAL_PRICE_BEFORE}   $12.00
+${TOTAL_BUTTON_BEFORE}  Total: $12.00
+${CART_DATA_BEFORE}     $12.00 x 1
+${CART_AMOUNT_BEFORE}   cart (1)
+${TOTAL_PRICE_AFTER}    $24.00
+${TOTAL_BUTTON_AFTER}   Total: $24.00
+${CART_DATA_AFTER}      $12.00 x 2
+${CART_AMOUNT_AFTER}    cart (2)
 
 *** Test Cases ***
 Increase Items Number In Cart
@@ -34,5 +34,10 @@ Increase Items Number In Cart
 
     Click Plus Button On Cart Page
 
-
+    ${total_price}=    Get Total Price
+    Should Be Equal    ${total_price}    ${TOTAL_PRICE_AFTER}
+    ${total_text}=    Get Total Text
+    Should Be Equal    ${total_text}    ${TOTAL_BUTTON_AFTER}
+    Verify Price And Amount    ${CART_DATA_AFTER}
+    Verify Cart Amount    ${CART_AMOUNT_AFTER}
 
