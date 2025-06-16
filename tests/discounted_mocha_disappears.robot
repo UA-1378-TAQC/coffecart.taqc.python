@@ -34,7 +34,7 @@ Verify Discounted Mocha Disappears After Removing Other Drinks
     Remove All From Cart By Drink Name    ${ESPRESSO}
 
     ${mocha_visible}=    Run Keyword And Return Status    Verify Drink Is In Cart    ${DISCOUNTED_MOCHA}
-    Should Be False    ${mocha_visible}    msg=Mocha should disappear but it is still in cart
+    Run Keyword If    ${mocha_visible}    Fail    Mocha should disappear but it is still in cart
 
     Total Button Should Not Be Visible
 
