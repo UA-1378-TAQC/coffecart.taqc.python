@@ -19,16 +19,16 @@ ${TOTAL_0}        Total: ${CURRENCY}0.00
 Verify Pop-up Cart Functioning With Plus And Minus Buttons
     [Tags]    regression    cart
 
-    menu_page.Click On Drink Element    ${DRINK}
-    menu_page.Verify Total Button Text  ${TOTAL_1}
+    Click On Drink Element    ${DRINK}
+    Verify Total Button Text  ${TOTAL_1}
 
-    menu_page.Hover Over Total Button
+    Hover Over Total Button
 
-    menu_page.Click Plus Button
-    menu_page.Verify Total Button Text   ${TOTAL_2}
+    Click Plus Button
+    Verify Total Button Text   ${TOTAL_2}
 
-    menu_page.Click Minus Button
-    menu_page.Verify Total Button Text   ${TOTAL_1}
+    Click Minus Button
+    Verify Total Button Text   ${TOTAL_1}
 
-    menu_page.Click Minus Button
-    menu_page.Verify Total Button Text   ${TOTAL_0}
+    Click Minus Button
+    Verify Total Button Text   ${TOTAL_0}
