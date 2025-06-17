@@ -2,7 +2,7 @@
 Library         SeleniumLibrary
 
 *** Variables ***
-${DRINK_XPATH}                  //*[@id='app']/div[2]/ul/li/h4[normalize-space(text())='{}']/following-sibling::*
+${DRINK_XPATH}        //div[@class='cup-body' and @aria-label='{}']
 ${CART_PAGE_LINK_XPATH}         //a[@aria-label='Cart page']
 ${TOTAL_BUTTON_XPATH}           //button[@class='pay']
 ${PLUS_BUTTON_XPATH_CART_MODAL}            //*[@id="app"]/div[2]/div[1]/ul/li/div[2]/button[1]
