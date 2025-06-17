@@ -20,8 +20,8 @@ Retain Modal Data On Menu Page And Reset On Cart Page
     [Tags]    regression    payment
 
     menu_page.Click On Drink Element        ${DRINK}
-    menu_page.Click On Total button
-    menu_page.Verify Payment Modal Appears
+    Click On Total button On Menu Page
+    Verify Payment Modal Appears On Menu Page
 
     payment_detail_modal.Enter Name         ${NAME}
     payment_detail_modal.Enter Email        ${EMAIL}
@@ -30,7 +30,7 @@ Retain Modal Data On Menu Page And Reset On Cart Page
     payment_detail_modal.Click Close Window Button
     menu_page.Verify Payment Modal Disappears
 
-    menu_page.Click On Total button
+    Click On Total button On Menu Page
     payment_detail_modal.Verify Name Field Value       ${NAME}
     payment_detail_modal.Verify Email Field Value      ${EMAIL}
     payment_detail_modal.Verify Checkbox Is Selected
@@ -38,7 +38,7 @@ Retain Modal Data On Menu Page And Reset On Cart Page
     payment_detail_modal.Click Close Window Button
     menu_page.Go To Cart Page
 
-    cart_page.Click On Total button
+    Click On Total button On Cart Page
     payment_detail_modal.Verify Name Field Value       ${EMPTY}
     payment_detail_modal.Verify Email Field Value      ${EMPTY}
     payment_detail_modal.Verify Checkbox Is Not Selected

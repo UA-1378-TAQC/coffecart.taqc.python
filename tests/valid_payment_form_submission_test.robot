@@ -18,8 +18,8 @@ ${EMPTY_CART_VALES}    Total: $0.00
 *** Test Cases ***
 Verify Payment Form Accepts Valid Inputs
     Click On Drink Element     ${TESTING_DRINK_NAME}
-    Click On Total button
-    Verify Payment Modal Appears
+    Click On Total button On Menu Page
+    Verify Payment Modal Appears On Menu Page
     Enter Name    ${VALID_NAME}
     Enter Email   ${VALID_EMAIL}
     Click Submit Button
