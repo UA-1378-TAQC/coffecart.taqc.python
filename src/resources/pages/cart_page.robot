@@ -88,8 +88,8 @@ Verify Cart Amount
 
 Verify Drink Is In Cart
     [Arguments]    ${drink_name}
-    ${item_xpath}=    Set Variable    //li[contains(text(), '${drink_name}')]
-    Wait Until Element Is Visible    ${item_xpath}    timeout=5s
+    ${item_xpath}=    Set Variable    //li[@class='list-item']//div[normalize-space(text())="${drink_name}"]
+    Wait Until Element Is Visible    xpath=${item_xpath}    timeout=5s
 
 Hover Over Total Button On Cart Page
     Mouse Over    ${TOTAL_BUTTON_XPATH}
@@ -99,6 +99,23 @@ Get CSS Property Value
     ${value}=    Execute JavaScript
     ...    return window.getComputedStyle(document.evaluate("${locator}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).getPropertyValue("${property}");
     RETURN    ${value}
+
+Remove Drink From Cart
+    [Arguments]    ${drink_name}
+    ${xpath}=    Set Variable    //li[@class='list-item'][.//*[contains(normalize-space(.), "${drink_name}")]]//button[contains(@class, 'delete')]
+    Log To Console    Trying to remove: ${drink_name}
+    Log To Console    XPath used: ${xpath}
+    Wait Until Element Is Visible    xpath=${xpath}    timeout=5s
+    Click Button    xpath=${xpath}
+
+Remove All From Cart By Drink Name
+    [Arguments]    ${drink_name}
+    FOR    ${i}    IN RANGE    5
+        ${xpath}=    Set Variable    //li[@class='list-item'][.//*[contains(normalize-space(.), "${drink_name}")]]//button[contains(@class, 'delete')]
+        ${exists}=    Run Keyword And Return Status    Element Should Be Visible    xpath=${xpath}    timeout=2s
+        Exit For Loop If    not ${exists}
+        Click Button    xpath=${xpath}
+    END
 
 Close Modal Window On Cart Page
     Wait Until Element Is Visible    ${MODAL_CLOSE_BUTTON_XPATH}
