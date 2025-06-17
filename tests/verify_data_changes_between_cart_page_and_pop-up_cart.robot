@@ -10,8 +10,6 @@ Test Setup        Open Browser To Menu Page
 Test Teardown     Teardown Browser
 
 *** Variables ***
-${BROWSER}          Chrome
-${URL}              https://coffee-cart.app/
 ${STEP_2_TEST_DATA}    Flat White
 ${STEP_3_TEST_DATA}    Total: $18.00
 ${STEP_3_1_TEST_DATA}    Flat White x 1

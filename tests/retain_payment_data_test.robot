@@ -19,26 +19,26 @@ ${EMAIL}          testuser@gmail.com
 Retain Modal Data On Menu Page And Reset On Cart Page
     [Tags]    regression    payment
 
-    menu_page.Click On Drink Element        ${DRINK}
+    Click On Drink Element        ${DRINK}
     Click On Total button On Menu Page
     Verify Payment Modal Appears On Menu Page
 
-    payment_detail_modal.Enter Name         ${NAME}
-    payment_detail_modal.Enter Email        ${EMAIL}
-    payment_detail_modal.Mark Promotion Checkbox
+    Enter Name         ${NAME}
+    Enter Email        ${EMAIL}
+    Mark Promotion Checkbox
 
-    payment_detail_modal.Click Close Window Button
-    menu_page.Verify Payment Modal Disappears
+    Click Close Window Button
+    Verify Payment Modal Disappears
 
     Click On Total button On Menu Page
-    payment_detail_modal.Verify Name Field Value       ${NAME}
-    payment_detail_modal.Verify Email Field Value      ${EMAIL}
-    payment_detail_modal.Verify Checkbox Is Selected
+    Verify Name Field Value       ${NAME}
+    Verify Email Field Value      ${EMAIL}
+    Verify Checkbox Is Selected
 
-    payment_detail_modal.Click Close Window Button
-    menu_page.Go To Cart Page
+    Click Close Window Button
+    Go To Cart Page
 
     Click On Total button On Cart Page
-    payment_detail_modal.Verify Name Field Value       ${EMPTY}
-    payment_detail_modal.Verify Email Field Value      ${EMPTY}
-    payment_detail_modal.Verify Checkbox Is Not Selected
+    Verify Name Field Value       ${EMPTY}
+    Verify Email Field Value      ${EMPTY}
+    Verify Checkbox Is Not Selected

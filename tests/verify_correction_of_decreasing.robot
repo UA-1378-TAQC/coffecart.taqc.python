@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation     Verify the correctness of decreasing the number of items on the "Cart" page
 Library    SeleniumLibrary
-Library     ../src/scripts/TC9.py
 Resource    ../src/resources/common.robot
 Resource    ../src/resources/pages/cart_page.robot
 Resource    ../src/resources/pages/menu_page.robot
@@ -11,8 +10,6 @@ Test Setup        Open Browser To Menu Page
 Test Teardown     Teardown Browser
 
 *** Variables ***
-${BROWSER}          Chrome
-${URL}              https://coffee-cart.app/
 ${STEP_2_TEST_DATA}    Espresso Macchiato
 ${STEP_6_TEST_DATA}    $12.00 x 1
 ${STEP_7_TEST_DATA}    $12.00
@@ -31,5 +28,3 @@ Verify the correctness of decreasing the number of items on the "Cart" page
     Verify Total Price    ${STEP_8_TEST_DATA}
     Verify Cart Amount    ${STEP_9_TEST_DATA}
     Click Minus Button On Cart Page
-
-    Close Browser
