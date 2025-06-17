@@ -13,8 +13,8 @@ Clear A Cart With One Product
     Click On Drink Element     Flat White
     Go To Cart Page
     
-    cart_page.Click On Total button
-    cart_page.Verify Payment Modal Appears
+    Click On Total button On Cart Page
+    Verify Payment Modal Appears On Cart Page
     Enter Name    mariia
     Enter Email   kk@jjj.kkk
     Click Submit Button
@@ -31,7 +31,7 @@ Clear A Cart With Tree Products
     Click On Drink Element    Espresso
     Go To Cart Page
     
-    cart_page.Click On Total button
+    Click On Total button On Cart Page
     Enter Name    mariia
     Enter Email   kk@jjj.kkk
     Click Submit Button

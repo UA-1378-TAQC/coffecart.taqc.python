@@ -13,7 +13,7 @@ Verify Invalid Email Formats In Payment Form
     menu_page.Click On Drink Element    Flat White
     menu_page.Go To Cart Page
 
-    cart_page.Click On Total button
+    Click On Total button On Cart Page
 
     payment_detail_modal.Enter Name    Viktoriia
 
