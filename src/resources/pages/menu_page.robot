@@ -67,7 +67,7 @@ Hover Over Total Button
 
 Get Drink Name Elements
     ${elements}=    Get WebElements    ${DRINK_NAMES_LIST_XPATH}
-    [Return]    ${elements}
+    RETURN    ${elements}
 
 Get CSS Property Value
     [Arguments]    ${locator}    ${property}
@@ -81,7 +81,7 @@ Close Modal Window On Menu Page
 
 Verify Total Button Hover Color
     [Arguments]    ${expected_color}
-    ${actual_color}=    menu_page.Get CSS Property Value    ${TOTAL_BUTTON_XPATH}    color
+    ${actual_color}=    Get CSS Property Value    ${TOTAL_BUTTON_XPATH}    color
     Should Be Equal    ${actual_color}    ${expected_color}
     ...    msg=Text color should change to ${expected_color} on hover
 

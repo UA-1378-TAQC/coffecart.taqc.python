@@ -1,7 +1,7 @@
 *** Settings ***
 Library         SeleniumLibrary
-Resource        src/resources/pages/menu_page.robot
-Resource        src/resources/pages/cart_page.robot
+Resource        ../src/resources/pages/menu_page.robot
+Resource        ../src/resources/pages/cart_page.robot
 Resource        ../src/resources/common.robot
 Test Setup        Open Browser To Menu Page
 Test Teardown     Teardown Browser
@@ -14,9 +14,8 @@ ${ESPRESSO_DRINK}               Espresso
 Test Total Button On Menu And Cart Pages
     [Documentation]    Verify the functioning of the "Total" button on "Menu" and "Cart" pages.
 
-    Go To Menu Page
-    Click On Drink Element    ${ESPRESSO_DRINK}
 
+    Click On Drink Element    ${ESPRESSO_DRINK}
     Hover Over Total Button
     Verify Total Button Hover Color    ${GOLDEN_COLOR}
     Verify Cart Preview Is Displayed

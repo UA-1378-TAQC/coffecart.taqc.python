@@ -10,33 +10,33 @@ Test Teardown     Teardown Browser
 
 *** Test Cases ***
 Verify appropriate actions while empty 'Name' field
-    menu_page.Click On Drink Element    Flat White
+    Click On Drink Element    Flat White
     Click On Total Button On Menu Page
     
     #Leave 'Name' input field empty
-    payment_detail_modal.Click Submit Button
+    Click Submit Button
     Verify Payment Modal Appears On Menu Page
 
-    payment_detail_modal.Verify Name Validation Message    Заповніть це поле.
+    Verify Name Validation Message    Заповніть це поле.
 
 Verify Error Handling while 'Name' input contains numbers
     menu_page.Click On Drink Element    Flat White
     Click On Total Button On Menu Page
 
-    payment_detail_modal.Enter Name    123Viktoriia    
-    payment_detail_modal.Enter Email    viktoriia11@gmail.com
-    payment_detail_modal.Click Submit Button
+    Enter Name    123Viktoriia
+    Enter Email    viktoriia11@gmail.com
+    Click Submit Button
     Verify Payment Modal Appears On Menu Page
-    payment_detail_modal.Verify Name Validation Message    Поле "Ім'я" не може містити цифри.
+    Verify Name Validation Message    Поле "Ім'я" не може містити цифри.
 
 Verify Error Handling while 'Name' input contains special symbols
     menu_page.Click On Drink Element    Flat White
     Click On Total Button On Menu Page
 
-    payment_detail_modal.Enter Name    @#viktoriia!
-    payment_detail_modal.Enter Email    viktoriia11@gmail.com
-    payment_detail_modal.Click Submit Button
+    Enter Name    @#viktoriia!
+    Enter Email    viktoriia11@gmail.com
+    Click Submit Button
     Verify Payment Modal Appears On Menu Page
-    payment_detail_modal.Verify Name Validation Message    Поле "Ім'я" не може містити спеціальні символи.
+    Verify Name Validation Message    Поле "Ім'я" не може містити спеціальні символи.
 
 
