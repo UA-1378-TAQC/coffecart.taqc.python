@@ -11,7 +11,7 @@ ${PAYMENT_MODAL_XPATH}          //div[@class='modal']
 ${SUCCESSFUL_POPUP_XPATH}       //div[contains(@class,'snackbar success')]
 ${LUCKY_DAY_POPUP_XPATH}                  //*[@id="app"]/div[2]
 ${CART_FILLING_MENU_PAGE_XPATH}    //*[@id="app"]/div[2]/div[1]/ul/li/div[1]
-
+                                   
 *** Keywords ***
 Click On Drink Element
     [Arguments]     ${drink_name}
