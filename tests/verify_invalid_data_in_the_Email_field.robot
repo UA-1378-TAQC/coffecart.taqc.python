@@ -10,26 +10,22 @@ Test Teardown     Teardown Browser
 
 *** Test Cases ***
 Verify Invalid Email Formats In Payment Form
-    menu_page.Click On Drink Element    Flat White
-    menu_page.Go To Cart Page
+    Click On Drink Element    Flat White
+    Go To Cart Page
 
     Click On Total button On Cart Page
 
-    payment_detail_modal.Enter Name    Viktoriia
+    Enter Name    Viktoriia
 
-    # Invalid email without '@'
-    payment_detail_modal.Enter Email   viktoriia11gmail.com
-    payment_detail_modal.Click Submit Button
-    payment_detail_modal.Verify Payment Modal Is Visible
+    Enter Email   viktoriia11gmail.com
+    Click Submit Button
+    Verify Payment Modal Is Visible
 
-    # Invalid email without domain
-    payment_detail_modal.Enter Email   viktoriia11@
-    payment_detail_modal.Click Submit Button
-    payment_detail_modal.Verify Payment Modal Is Visible
+    Enter Email   viktoriia11@
+    Click Submit Button
+    Verify Payment Modal Is Visible
 
-    # Invalid email with spaces
-    payment_detail_modal.Enter Email   viktoriia 11@gmail.com
-    payment_detail_modal.Click Submit Button
-    payment_detail_modal.Verify Payment Modal Is Visible
-
-
+    Enter Email   viktoriia 11@gmail.com
+    Click Submit Button
+    Verify Payment Modal Is Visible
+    

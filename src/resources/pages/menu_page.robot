@@ -3,6 +3,7 @@ Library         SeleniumLibrary
 
 *** Variables ***
 ${DRINK_XPATH}                  //*[@id='app']/div[2]/ul/li/h4[normalize-space(text())='{}']/following-sibling::*
+${DRINK_AFTER_LUCHY_DAY_XPATH}                  //*[@id='app']/div[3]/ul/li/h4[normalize-space(text())='{}']/following-sibling::*
 ${CART_PAGE_LINK_XPATH}         //a[@aria-label='Cart page']
 ${TOTAL_BUTTON_XPATH}           //button[@class='pay']
 ${PLUS_BUTTON_XPATH_CART_MODAL}            //*[@id="app"]/div[2]/div[1]/ul/li/div[2]/button[1]
@@ -20,6 +21,12 @@ ${MODAL_CLOSE_BUTTON_XPATH}         //div[@class='modal']//section/button
 Click On Drink Element
     [Arguments]     ${drink_name}
     ${locator}=     Evaluate    "${DRINK_XPATH}".replace("{}", "${drink_name}")
+    Wait Until Element Is Visible    ${locator}
+    Click Element    ${locator}
+
+Click On Drink Element After Lucky Day PopUP
+    [Arguments]     ${drink_name}
+    ${locator}=     Evaluate    "${DRINK_AFTER_LUCHY_DAY_XPATH}".replace("{}", "${drink_name}")
     Wait Until Element Is Visible    ${locator}
     Click Element    ${locator}
 

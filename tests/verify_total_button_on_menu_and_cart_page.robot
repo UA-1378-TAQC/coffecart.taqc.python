@@ -14,7 +14,6 @@ ${ESPRESSO_DRINK}               Espresso
 Test Total Button On Menu And Cart Pages
     [Documentation]    Verify the functioning of the "Total" button on "Menu" and "Cart" pages.
 
-
     Click On Drink Element    ${ESPRESSO_DRINK}
     Hover Over Total Button
     Verify Total Button Hover Color    ${GOLDEN_COLOR}

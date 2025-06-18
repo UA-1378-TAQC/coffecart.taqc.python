@@ -15,13 +15,14 @@ Test Teardown     Teardown Browser
 @{DRINK SET 4}    Espresso    Americano
 @{DRINK SET 5}    Cappuccino   Espresso
 
-
 *** Test Cases ***
 Lucky Day Pop-up Test Set 1
+    [Tags]    bug
     [Template]    Lucky Day Pop-up Appearing For Drink Set
     @{DRINK SET 1}
     @{DRINK SET 2}
 Lucky Day Pop-up Test Set 2
+    [Tags]    bug
     [Template]    Lucky Day Pop-up Appearing For Drink Set
     @{DRINK SET 3}
     @{DRINK SET 4}
@@ -36,8 +37,3 @@ Lucky Day Pop-up Appearing For Drink Set
     Verify Lucky Day Popup Appears
     Click Yes On Successful Popup
     Verify Popup Disappears Automatically
-
-
-
-
-

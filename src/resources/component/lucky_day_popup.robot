@@ -5,12 +5,11 @@ Resource    ../pages/menu_page.robot
 *** Variables ***
 ${POPUP_XPATH}    //*[@class='promo']
 ${POPUP_MESSAGE}     It's your lucky day! Get an extra cup of Mocha for $4.
-${POPUP_TIMEOUT}     10s
+${POPUP_TIMEOUT}     5s
 ${ESPRESSO}         Espresso
 ${ESPRESSO_MACCHIATO}  Espresso Macchiato
 ${CAPPUCCINO}       Cappuccino
 ${YES_POPUP_BUTTON}    //div[@class='promo']//button[contains(text(), 'Yes, of course!')]
-
 
 *** Keywords ***
 Add Three Items To Trigger Popup
@@ -22,9 +21,8 @@ Verify Popup Appears
     Wait Until Page Contains Element    ${POPUP_XPATH}    timeout=${POPUP_TIMEOUT}
     Element Should Contain    ${POPUP_XPATH}    ${POPUP_MESSAGE}
 
-
 Verify Popup Disappears Automatically
-    Wait Until Element Is Not Visible    ${POPUP_XPATH}    timeout=${POPUP_TIMEOUT}
+    Wait Until Element Is Not Visible    ${POPUP_XPATH}
     Page Should Not Contain Element    ${POPUP_XPATH}
 
 Click Yes On Successful Popup
