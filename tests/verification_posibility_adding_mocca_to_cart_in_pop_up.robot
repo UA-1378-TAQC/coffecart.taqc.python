@@ -17,12 +17,10 @@ Test Teardown     Teardown Browser
 
 *** Test Cases ***
 Lucky Day Pop-up Test Set 1
-    [Tags]    bug
     [Template]    Lucky Day Pop-up Appearing For Drink Set
     @{DRINK SET 1}
     @{DRINK SET 2}
 Lucky Day Pop-up Test Set 2
-    [Tags]    bug
     [Template]    Lucky Day Pop-up Appearing For Drink Set
     @{DRINK SET 3}
     @{DRINK SET 4}

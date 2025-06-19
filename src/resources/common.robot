@@ -2,8 +2,8 @@
 Library         SeleniumLibrary
 
 *** Variables ***
-# ${BROWSER}    Chrome
-${BROWSER}    headlesschrome
+${BROWSER}    Chrome
+#${BROWSER}    headlesschrome
 ${URL}        https://coffee-cart.app
 ${SCREENSHOOT_LIBRARY}    ../coffecart.taqc.python/tests/results
 
@@ -15,3 +15,4 @@ Open Browser To Menu Page
 
 Teardown Browser
     Close Browser
+
