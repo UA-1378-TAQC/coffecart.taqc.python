@@ -6,7 +6,7 @@ Resource    ../src/resources/Data/drinks.robot
 Resource    ../src/resources/component/lucky_day_popup.robot
 Resource    ../src/resources/common.robot
 Library    BuiltIn
-Test Setup        Open Browser To Menu Page
+Test Setup        Open Browser To Menu Page Headless
 Test Teardown     Teardown Browser
 
 *** Variables ***
