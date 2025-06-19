@@ -28,3 +28,12 @@ Verify Popup Disappears Automatically
 Click Yes On Successful Popup
     Wait Until Element Is Visible    ${YES_POPUP_BUTTON}
     Click Button    ${YES_POPUP_BUTTON}
+
+Lucky Day Pop-up Appearing For Drink Set
+    [Arguments]    @{drinks}
+    FOR    ${drink}    IN    @{drinks}
+        Click On Drink Element    ${drink}
+    END
+    Verify Lucky Day Popup Appears
+    Click Yes On Successful Popup
+    Verify Popup Disappears Automatically

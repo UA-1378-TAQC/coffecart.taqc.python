@@ -5,6 +5,7 @@ Resource    ../src/resources/pages/cart_page.robot
 Resource    ../src/resources/Data/drinks.robot
 Resource    ../src/resources/component/lucky_day_popup.robot
 Resource    ../src/resources/common.robot
+Library    BuiltIn
 Test Setup        Open Browser To Menu Page
 Test Teardown     Teardown Browser
 
@@ -27,13 +28,3 @@ Lucky Day Pop-up Test Set 2
     @{DRINK SET 3}
     @{DRINK SET 4}
     @{DRINK SET 5}
-
-*** Keywords ***
-Lucky Day Pop-up Appearing For Drink Set
-    [Arguments]    @{drinks}
-    FOR    ${drink}    IN    @{drinks}
-        Click On Drink Element    ${drink}
-    END
-    Verify Lucky Day Popup Appears
-    Click Yes On Successful Popup
-    Verify Popup Disappears Automatically

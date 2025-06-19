@@ -15,7 +15,7 @@ ${EMPTY_MESSAGE}       No coffee, go add some.
 
 *** Test Cases ***
 Verify Discounted Mocha Disappears After Removing Other Drinks
-    [Tags]    mocha    cart    bug    ui
+    [Tags]    bug
 
     Click On Drink Element    ${ESPRESSO}
     Click On Drink Element    ${ESPRESSO}
