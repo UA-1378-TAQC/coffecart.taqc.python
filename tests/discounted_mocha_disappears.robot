@@ -41,4 +41,3 @@ Verify Discounted Mocha Disappears After Removing Other Drinks
     Cart Page Should Contain Empty Text Element
 
     Verify Cart Link Equal    cart (0)
-    
