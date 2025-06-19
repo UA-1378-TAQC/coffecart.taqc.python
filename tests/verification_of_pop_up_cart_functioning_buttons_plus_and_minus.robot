@@ -17,7 +17,6 @@ ${TOTAL_0}        Total: ${CURRENCY}0.00
 
 *** Test Cases ***
 Verify Pop-up Cart Functioning With Plus And Minus Buttons
-    [Tags]       cart
 
     Click On Drink Element    ${DRINK}
     Verify Total Button Text  ${TOTAL_1}
