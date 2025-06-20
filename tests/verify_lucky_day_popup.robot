@@ -12,10 +12,8 @@ Verify "Lucky Day" Popup Behavior Without Interaction
 
     Add Three Items To Trigger Popup
     Verify Popup Appears
-    Click On Drink Element    ${ESPRESSO}
+    Click On Drink Element After Lucky Day PopUP    ${ESPRESSO}
     Verify Popup Disappears Automatically
     Click On Drink Element    ${ESPRESSO_MACCHIATO}
-    Click On Drink Element    ${CAPPUCCINO}
+    Click On Drink Element   ${CAPPUCCINO}
     Verify Popup Appears
-
-

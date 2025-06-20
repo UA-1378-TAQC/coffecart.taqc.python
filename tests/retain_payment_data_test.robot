@@ -17,8 +17,6 @@ ${EMAIL}          testuser@gmail.com
 
 *** Test Cases ***
 Retain Modal Data On Menu Page And Reset On Cart Page
-    [Tags]    regression    payment
-
     Click On Drink Element        ${DRINK}
     Click On Total button On Menu Page
     Verify Payment Modal Appears On Menu Page

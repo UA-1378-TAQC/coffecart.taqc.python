@@ -40,4 +40,3 @@ Increase Items Number In Cart
     Should Be Equal    ${total_text}    ${TOTAL_BUTTON_AFTER}
     Verify Price And Amount    ${CART_DATA_AFTER}
     Verify Cart Amount    ${CART_AMOUNT_AFTER}
-

@@ -14,3 +14,4 @@ Verify order button restriction with empty cart
 
     Go To Menu Page
     Total Button Should Be Visible
+    

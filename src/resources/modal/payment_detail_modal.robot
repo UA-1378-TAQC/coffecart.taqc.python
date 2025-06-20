@@ -49,3 +49,17 @@ Verify Checkbox Is Selected
 
 Verify Checkbox Is Not Selected
     Checkbox Should Not Be Selected    ${PROMO_CHECKBOX_XPATH}
+
+Verify Error Message In Empty Name
+    ${expected}=     Set Variable    Please fill
+    # ${expected}=     Set Variable    Please fill out this field.
+    ${actual}=    Get Validation Message From Input    ${INPUT_NAME_XPATH}     
+    Should Be Equal    ${actual}    ${expected}
+
+Get Validation Message From Input 
+    [Arguments]    ${xpath}
+    ${js}=    Catenate
+    ...    return document.evaluate("${xpath}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.validationMessage;
+    ${message}=    Execute Javascript    ${js}
+    [Return]    ${message}
+    

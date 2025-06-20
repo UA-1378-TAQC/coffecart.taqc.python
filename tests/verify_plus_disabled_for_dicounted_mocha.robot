@@ -10,6 +10,7 @@ Test Teardown     Teardown Browser
 *** Test Cases ***
 Increase Items Number In Cart
     [Documentation]    Verify '+' button is disabled for '(Discounted) Mocha' in the Cart Page
+    [Tags]    bug
     Add Three Items To Trigger Popup
     Verify Popup Appears
     Click Yes On Successful Popup
@@ -17,4 +18,3 @@ Increase Items Number In Cart
     Click Plus Button On Cart Page
     ${Count}=    Get Cart Amount
     Should Be Equal    ${Count}    4
-
