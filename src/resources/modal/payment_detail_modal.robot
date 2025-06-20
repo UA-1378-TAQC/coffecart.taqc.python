@@ -62,4 +62,3 @@ Get Validation Message From Input
     ...    return document.evaluate("${xpath}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.validationMessage;
     ${message}=    Execute Javascript    ${js}
     [Return]    ${message}
-    
