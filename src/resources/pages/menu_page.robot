@@ -11,15 +11,17 @@ ${DRINK_AFTER_LUCHY_DAY_XPATH}                  //*[@id='app']/div[3]/ul/li/h4[n
 ${CART_PAGE_LINK_XPATH}         //a[@aria-label='Cart page']
 ${TOTAL_BUTTON_XPATH}           //button[@class='pay']
 ${PLUS_BUTTON_XPATH_CART_MODAL}            //*[@id="app"]/div[2]/div[1]/ul/li/div[2]/button[1]
-${MINUS_BUTTON_XPATH_CART_MODAL}           //*[@id="app"]/div[2]/div[1]/ul/li/div[2]/button[2]    
+${MINUS_BUTTON_XPATH_CART_MODAL}           //*[@id="app"]/div[2]/div[1]/ul/li/div[2]/button[2]
 ${PAYMENT_MODAL_XPATH}          //div[@class='modal']
 ${SUCCESSFUL_POPUP_XPATH}       //div[contains(@class,'snackbar success')]
 ${LUCKY_DAY_POPUP_XPATH}                  //*[@id="app"]/div[2]
-${CART_FILLING_MENU_PAGE_ITEM_XPATH}   //*[@id="app"]/div[2]/div[1]/ul/li/div[1]/span[1]                                      
+${CART_FILLING_MENU_PAGE_ITEM_XPATH}   //*[@id="app"]/div[2]/div[1]/ul/li/div[1]/span[1]
 ${CART_FILLING_MENU_PAGE_QANTITY_XPATH}   //*[@id="app"]/div[2]/div[1]/ul/li/div[1]/span[2]
 ${DRINK_NAMES_LIST_XPATH}    //*[@id="app"]/div[2]/ul/li/h4
 ${CART_COMPONENT_ROOT_XPATH}        //ul[@class='cart-preview show']
 ${MODAL_CLOSE_BUTTON_XPATH}         //div[@class='modal']//section/button
+${NO_BUTTON_XPATH}    //*[@id="app"]/dialog/form/button[2]
+${YES_BUTTON_XPATH}   //*[@id="app"]/dialog/form/button[1]
 
 *** Keywords ***
 Click On Drink Element
@@ -71,7 +73,7 @@ Verify Lucky Day Popup Appears
     Wait Until Element Is Visible    ${LUCKY_DAY_POPUP_XPATH}
 
 Verify Cart On Menu Page
-    [Arguments]     ${value_item}    ${value_quantity}        
+    [Arguments]     ${value_item}    ${value_quantity}
     Element Text Should Be    ${CART_FILLING_MENU_PAGE_ITEM_XPATH}    ${value_item}
     Element Text Should Be    ${CART_FILLING_MENU_PAGE_QANTITY_XPATH}    ${value_quantity}
 
@@ -107,7 +109,7 @@ Click Coffee Cup Icon By Index
     [Arguments]    ${index}
     ${locator}=    Set Variable      (//div[@class='cup-body'])[${index + 1}]
     Click Element    xpath=${locator}
-    
+
 Verify Translation For Drink Element
     [Arguments]    ${element}
     ${original_name}=    Get Drink Name From Element    ${element}
@@ -115,3 +117,15 @@ Verify Translation For Drink Element
     ${translated_name}=    Get Translated Drink Name From Element    ${element}
     ${expected_translation}=    Get From Dictionary    ${DRINK_TRANSLATIONS}    ${original_name}
     Should Be Equal As Strings    ${translated_name}    ${expected_translation}
+
+Open Context Menu On Drink
+    [Arguments]    ${drink_name}
+    ${cup_locator}=    Set Variable    //div[@class="cup-body" and @aria-label="${drink_name}"]
+    Wait Until Element Is Visible    xpath=${cup_locator}    10s
+    Open Context Menu    xpath=${cup_locator}
+
+Get No Button Color
+    [Arguments]    ${locator}
+    ${color}=    Execute JavaScript
+    ...    return window.getComputedStyle(document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).getPropertyValue('color');
+    RETURN    ${color}
