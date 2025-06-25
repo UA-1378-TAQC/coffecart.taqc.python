@@ -129,3 +129,9 @@ Get No Button Color
     ${color}=    Execute JavaScript
     ...    return window.getComputedStyle(document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).getPropertyValue('color');
     RETURN    ${color}
+
+Get Yes Button Color
+    [Arguments]    ${locator}
+    ${color}=    Execute JavaScript
+    ...    return window.getComputedStyle(document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).getPropertyValue('color');
+    RETURN    ${color}
